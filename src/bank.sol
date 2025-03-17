@@ -46,7 +46,7 @@ contract Bank is AutomationCompatibleInterface {
 
     function adminWithdraw() public {
         // 将指定 amount 转回管理员地址
-        (bool success, ) = payable(owner).call{value: address(this).balance}("");
+        (bool success, ) = payable(owner).call{value: address(this).balance / 2}("");
         require(success, "faill");
     }
 
